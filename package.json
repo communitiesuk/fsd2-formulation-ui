@@ -1,7 +1,7 @@
 {
-  "name": "NAME",
+  "name": "fsd2-formulation-ui",
   "version": "0.1.0",
-  "description": "DESCRIPTION",
+  "description": "Prototype UI to illustrate a possible solution space for the FSD project, in terms of the formulation and establishment of a Fund. Part of the fsd-proto-2 project.",
   "author": "Mark Henwood <mcbhenwood@icloud.com>",
   "main": "index.js",
   "scripts": {

@@ -1,6 +1,9 @@
-# README - template
+# fsd2-formulation-ui
 
-(run `docker-compose run ui npm update` first)
+Prototype UI to illustrate a possible solution space for the FSD project, in terms of the
+formulation and establishment of a Fund.
+
+Part of the fsd-proto-2 project.
 
 ## Working with the project
 

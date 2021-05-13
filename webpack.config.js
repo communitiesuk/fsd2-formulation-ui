@@ -39,7 +39,7 @@ const baseConfig = {
       filename: './index.html',
     }),
     new webpack.DefinePlugin({
-      API_HOST: JSON.stringify(process.env.API_HOST),
+      EVENT_HUB_HOST: JSON.stringify(process.env.EVENT_HUB_HOST),
     }),
   ],
 }

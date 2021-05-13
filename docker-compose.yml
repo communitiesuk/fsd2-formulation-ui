@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  ui:
+    build: .
+    command: npm run start:dev
+    environment:
+      # Environment vars are employed at BUILD TIME by WEBPACK. They are not
+      # exposed "into" the JS / React app.
+      API_HOST: http://localhost:8000
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/usr/src/app

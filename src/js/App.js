@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { appendEvent } from './services'
+import { appendEvent, getEvents } from './services'
 
 const DummyForm = ({ handleSubmission }) => {
   return (
@@ -16,6 +16,8 @@ const DummyForm = ({ handleSubmission }) => {
 
 const App = () => {
   const [dummySubmission, setDummySubmission] = useState('')
+  const [events, setEvents] = useState([])
+  const [fetchEvents, setFetchEvents] = useState(false)
   const [submissionResult, setSubmissionResult] = useState('')
 
   useEffect(() => {
@@ -27,6 +29,15 @@ const App = () => {
     }
   }, [dummySubmission])
 
+  useEffect(() => {
+    if (fetchEvents) {
+      getEvents('dummy', (data) => {
+        setEvents(data.events)
+        setFetchEvents(false)
+      })
+    }
+  }, [fetchEvents])
+
   const handleDummyFormSubmission = (e) => {
     e.preventDefault()
     const form = e.target
@@ -34,11 +45,29 @@ const App = () => {
     setDummySubmission(someValue)
   }
 
+  const handleGetEventClick = () => {
+    setFetchEvents(true)
+  }
+
   return (
     <>
       <h1>Fund Formulation UI (FSD-Proto-2) v0.1</h1>
+      <h2>Appending an Event</h2>
       <DummyForm handleSubmission={handleDummyFormSubmission} />
       {submissionResult ? <p>Submission result: {submissionResult}</p> : ''}
+
+      <h2>Reading back Events</h2>
+      <button onClick={handleGetEventClick}>Get Events</button>
+      <h3>Events</h3>
+      <ul>
+        {events.length
+          ? events.map((event, idx) => (
+              <li key={idx}>
+                {event.seq}: {event.data}
+              </li>
+            ))
+          : ''}
+      </ul>
     </>
   )
 }

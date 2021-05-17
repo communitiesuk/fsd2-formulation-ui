@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const appendEvent = (eventType, eventValue, callback) => {
   axios
-    .post(`${EVENT_HUB_HOST}/events/${eventType}`, {
+    .post(`${EVENT_HUB_API_URL}/events/${eventType}`, {
       value: eventValue,
     })
     .then((response) => {
@@ -11,7 +11,7 @@ export const appendEvent = (eventType, eventValue, callback) => {
 }
 
 export const getEvents = (eventType, callback) => {
-  axios.get(`${EVENT_HUB_HOST}/events/${eventType}`).then((response) => {
+  axios.get(`${EVENT_HUB_API_URL}/events/${eventType}`).then((response) => {
     callback(response.data)
   })
 }

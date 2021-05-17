@@ -17,7 +17,7 @@ Once completed the checkbox next to the item will be checked.
 
 - [ ] Designer: Clicking "guidance" on Q1 yields some guidance
 
-- [ ] Designer: Answering "No" to Q1 yields a Stop message
+- [x] Designer: Answering "No" to Q1 yields a Stop message
 
 - [ ] Designer: Answering "Yes" to Q1 yields Q2
 

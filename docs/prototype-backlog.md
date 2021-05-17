@@ -19,7 +19,7 @@ Once completed the checkbox next to the item will be checked.
 
 - [x] Designer: Answering "No" to Q1 yields a Stop message
 
-- [ ] Designer: Answering "Yes" to Q1 yields Q2
+- [x] Designer: Answering "Yes" to Q1 yields Q2
 
 - [ ] Designer: Answering "Yes" to Q1 yields the "your choices" section
 

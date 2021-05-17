@@ -5,6 +5,9 @@ formulation and establishment of a Fund.
 
 Part of the fsd-proto-2 project.
 
+The "living" backlog for this project can be found in the
+[Prototype Backlog](docs/prototype-backlog.md) document.
+
 ## Working with the project
 
 To work with this project the only install you need is the most recent

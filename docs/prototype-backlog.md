@@ -13,7 +13,7 @@ Once completed the checkbox next to the item will be checked.
 
 - [ ] Ops: Stand up a publicly accessible service in cloud
 
-- [ ] Designer: I can see the page header and Q1
+- [x] Designer: I can see the page header and Q1
 
 - [ ] Designer: Clicking "guidance" on Q1 yields some guidance
 

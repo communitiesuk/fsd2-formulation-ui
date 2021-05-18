@@ -27,7 +27,7 @@ Once completed the checkbox next to the item will be checked.
 
 - [x] Designer: Answering Q2 adds the Q2 result to the Your Choices section
 
-- [ ] Designer: Q2 choice of "direct award" yields extra summary "Applicants can include: Local authorities, charities and businesses"
+- [x] Designer: Q2 choice of "direct award" yields extra summary "Applicants can include: Local authorities, charities and businesses"
 
 - [ ] Designer: Having answered Q2, the "Publish" button appears
 

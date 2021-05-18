@@ -17,6 +17,14 @@ export const FundSetupSummary = ({ questions }) => {
               <p>
                 The fund will be delivered by <b>{formulateQ2}</b>.
               </p>
+              {formulateQ2 == 'direct award' ? (
+                <p>
+                  Applicants can include: Local authorities, charities and
+                  businesses.
+                </p>
+              ) : (
+                ''
+              )}
             </>
           ) : (
             ''

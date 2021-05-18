@@ -15,7 +15,7 @@ Once completed the checkbox next to the item will be checked.
 
 - [x] Designer: I can see the page header and Q1
 
-- [ ] Designer: Clicking "guidance" on Q1 yields some guidance
+- [x] Designer: Clicking "guidance" on Q1 yields some guidance
 
 - [x] Designer: Answering "No" to Q1 yields a Stop message
 
@@ -23,9 +23,11 @@ Once completed the checkbox next to the item will be checked.
 
 - [x] Designer: Answering "Yes" to Q1 yields the "your choices" section and Q1 choice
 
-- [ ] Designer: Clicking "guidance" on Q2 yields some other guidance
+- [x] Designer: Clicking "guidance" on Q2 yields some other guidance
 
 - [x] Designer: Answering Q2 adds the Q2 result to the Your Choices section
+
+- [ ] Designer: Q2 choice of "direct award" yields extra summary "Applicants can include: Local authorities, charities and businesses"
 
 - [ ] Designer: Having answered Q2, the "Publish" button appears
 

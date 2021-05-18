@@ -9,6 +9,9 @@ export const FundSetupQuestions = ({ currentQ, handleFormChange }) => {
       <form onChange={handleFormChange}>
         <RadioQuestion
           name={'formulateQ1'}
+          guidance={
+            'Here is some very good guidance on what constitutes a competitive fund.'
+          }
           questionText={'Is this a competitive fund?'}
         >
           <RadioQuestionOption value={'yes'}>Yes</RadioQuestionOption>
@@ -19,6 +22,7 @@ export const FundSetupQuestions = ({ currentQ, handleFormChange }) => {
           <>
             <RadioQuestion
               name={'formulateQ2'}
+              guidance={'Guidance concerning the delivery methods for funds.'}
               questionText={'How will your fund be delivered?'}
             >
               <RadioQuestionOption value={'intermediary bodies'}>

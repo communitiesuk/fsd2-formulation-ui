@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
+import { RadioQuestion, RadioQuestionOption } from './components/RadioQuestion'
+
 const PROHIBITION_MESSAGE_COMPETITIVE_ONLY =
   'Please do not go any further. This page is for setting up competitive funds only at the moment.'
 
@@ -24,31 +26,14 @@ const App = () => {
       <h1>Fund Formulation UI (FSD-Proto-2) v0.1</h1>
       <h2>Fund Setup - Initial Questions</h2>
       <form onChange={handleFormChange}>
-        <p>Is this a competitive fund?</p>
-        <div className="form-check">
-          <input
-            className="form-check-input"
-            type="radio"
-            name="formulateQ1"
-            id="formulateQ1opt1"
-            value="yes"
-          />
-          <label className="form-check-label" htmlFor="formulateQ1opt1">
-            Yes
-          </label>
-        </div>
-        <div className="form-check">
-          <input
-            className="form-check-input"
-            type="radio"
-            name="formulateQ1"
-            id="formulateQ1opt2"
-            value="no"
-          />
-          <label className="form-check-label" htmlFor="formulateQ1opt2">
-            No
-          </label>
-        </div>
+        <RadioQuestion
+          name={'formulateQ1'}
+          questionText={'Is this a competitive fund?'}
+        >
+          <RadioQuestionOption value={'yes'}>Yes</RadioQuestionOption>
+          <RadioQuestionOption value={'no'}>No</RadioQuestionOption>
+        </RadioQuestion>
+
         {currentQ >= 2 ? (
           <div>
             <p>How will your fund be delivered?</p>

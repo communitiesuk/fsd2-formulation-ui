@@ -1,7 +1,10 @@
 version: "3.9"
 services:
   ui:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
     command: npm run start:dev
     environment:
       # Environment vars are employed at BUILD TIME by WEBPACK. They are not

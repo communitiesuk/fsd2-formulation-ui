@@ -16,33 +16,19 @@ export const FundSetupQuestions = ({ currentQ, handleFormChange }) => {
         </RadioQuestion>
 
         {currentQ >= 2 ? (
-          <div>
-            <p>How will your fund be delivered?</p>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="formulateQ2"
-                id="formulateQ2opt1"
-                value="yes"
-              />
-              <label className="form-check-label" htmlFor="formulateQ2opt1">
-                Intermediary bodies
-              </label>
-            </div>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="formulateQ2"
-                id="formulateQ2opt2"
-                value="yes"
-              />
-              <label className="form-check-label" htmlFor="formulateQ2opt2">
+          <>
+            <RadioQuestion
+              name={'formulateQ2'}
+              questionText={'How will your fund be delivered?'}
+            >
+              <RadioQuestionOption value={'intermediary bodies'}>
+                Intermediary Bodies
+              </RadioQuestionOption>
+              <RadioQuestionOption value={'direct award'}>
                 Direct award
-              </label>
-            </div>
-          </div>
+              </RadioQuestionOption>
+            </RadioQuestion>
+          </>
         ) : (
           ''
         )}

@@ -1,15 +1,26 @@
 import React from 'react'
 
 export const FundSetupSummary = ({ questions }) => {
-  const q1choice = questions.formulateQ1
+  const { formulateQ1, formulateQ2 } = questions
+
   return (
     <>
-      {q1choice == 'yes' ? (
+      {formulateQ1 == 'yes' ? (
         <>
           <h2>Your Choices</h2>
           <p>
             This is a <b>competitive</b> fund.
           </p>
+
+          {formulateQ2 ? (
+            <>
+              <p>
+                The fund will be delivered by <b>{formulateQ2}</b>.
+              </p>
+            </>
+          ) : (
+            ''
+          )}
         </>
       ) : (
         ''

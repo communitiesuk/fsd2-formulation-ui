@@ -25,7 +25,7 @@ Once completed the checkbox next to the item will be checked.
 
 - [ ] Designer: Clicking "guidance" on Q2 yields some other guidance
 
-- [ ] Designer: Answering Q2 adds the Q2 result to the Your Choices section
+- [x] Designer: Answering Q2 adds the Q2 result to the Your Choices section
 
 - [ ] Designer: Having answered Q2, the "Publish" button appears
 

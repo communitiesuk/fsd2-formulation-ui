@@ -21,11 +21,11 @@ Once completed the checkbox next to the item will be checked.
 
 - [x] Designer: Answering "Yes" to Q1 yields Q2
 
-- [ ] Designer: Answering "Yes" to Q1 yields the "your choices" section
+- [x] Designer: Answering "Yes" to Q1 yields the "your choices" section and Q1 choice
 
 - [ ] Designer: Clicking "guidance" on Q2 yields some other guidance
 
-- [ ] Designer: Answering Q2 updates the Your Choices section
+- [ ] Designer: Answering Q2 adds the Q2 result to the Your Choices section
 
 - [ ] Designer: Having answered Q2, the "Publish" button appears
 

@@ -32,3 +32,23 @@ Once completed the checkbox next to the item will be checked.
 - [x] Designer: Having answered Q2, the "Publish" button appears
 
 - [x] Designer: Clicking "Publish" publishes the Fund as an Event
+
+- [ ] Rework publication to send the event data with all the info the Application UI needs
+
+- [ ] Designer: If Summary is visible I also see an Example Application Form (with just the Org Type)
+
+- [ ] Designer: For Direct Award fund, we also see the "strategic fit" question (FIRST)
+
+- [ ] Designer: If Intermediary, show 'validation hint' for Org Type Q; it is always "must be LA, MCA, LEP"
+
+- [ ] Designer: Q3 is "Capital Spend?"
+
+- [ ] Designer: If Direct Award + Capital Spend Yes then Org Type validation hint is "must not be LA, MCA, or LEP"; if "no" then "MUST BE LA, MCA, LEP"
+
+- [ ] Designer: For "intermediaries" there is also Q4 "Ringfenced?"  
+
+- [ ] Designer: For intermediaries + Ringfenced Yes, we see "Strategic Fit" question
+
+- [ ] Designer: For intermediaries + Ringfenced No, we do not see "Strategic Fit" question
+
+- [ ] Designer: "Strategic Fit" Q always has validation hint of "Answer must be Yes"

@@ -1,5 +1,6 @@
 import React, { useReducer, useState } from 'react'
 
+import { appendEvent } from '../../services'
 import { FundSetupQuestions } from './FundSetupQuestions'
 import { FundSetupSummary } from './FundSetupSummary'
 
@@ -19,6 +20,7 @@ export const FundBuilder = () => {
   )
   const [currentQ, setCurrentQ] = useState(1)
   const [prohibitionMessage, setProhibitionMessage] = useState('')
+  const [publishedMessage, setPublishedMessage] = useState('')
 
   const handleFormChange = (e) => {
     fundSetupQuestionsDispatch({
@@ -29,11 +31,23 @@ export const FundBuilder = () => {
       if (e.target.value == 'no') {
         setProhibitionMessage(PROHIBITION_MESSAGE_COMPETITIVE_ONLY)
         setCurrentQ(1)
+        fundSetupQuestionsDispatch({
+          question: 'formulateQ2',
+          choice: null,
+        })
       } else {
         setProhibitionMessage('')
         setCurrentQ(2)
       }
     }
+  }
+
+  const handlePublishClick = () => {
+    appendEvent('fundPublished', fundSetupQuestions, (status) => {
+      if (status == '201') {
+        setPublishedMessage('Fund was published.')
+      }
+    })
   }
 
   return (
@@ -53,6 +67,20 @@ export const FundBuilder = () => {
         <div className="alert alert-danger" role="alert">
           {prohibitionMessage}
         </div>
+      ) : (
+        ''
+      )}
+      {fundSetupQuestions.formulateQ1 && fundSetupQuestions.formulateQ2 ? (
+        <>
+          <button
+            type="button"
+            className="btn btn-success"
+            onClick={handlePublishClick}
+          >
+            Publish Fund
+          </button>
+          {publishedMessage}
+        </>
       ) : (
         ''
       )}

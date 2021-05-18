@@ -29,6 +29,6 @@ Once completed the checkbox next to the item will be checked.
 
 - [x] Designer: Q2 choice of "direct award" yields extra summary "Applicants can include: Local authorities, charities and businesses"
 
-- [ ] Designer: Having answered Q2, the "Publish" button appears
+- [x] Designer: Having answered Q2, the "Publish" button appears
 
-- [ ] Designer: Clicking "Publish" publishes the Fund as an Event
+- [x] Designer: Clicking "Publish" publishes the Fund as an Event

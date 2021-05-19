@@ -68,11 +68,15 @@ export const FundBuilder = () => {
   }
 
   const handlePublishClick = () => {
-    publishFund(setupSummary, (success) => {
-      if (success) {
-        setPublishedMessage('Fund was published.')
+    publishFund(
+      setupSummary,
+      applicationQuestionsState.applicationQuestions,
+      (success) => {
+        if (success) {
+          setPublishedMessage('Fund was published.')
+        }
       }
-    })
+    )
   }
 
   const showRingfencedQuestion =

@@ -10,8 +10,8 @@ const appendEvent = (eventType, eventValue, callback) => {
     })
 }
 
-export const publishFund = (summary, callback) => {
-  appendEvent('fundPublished', { summary }, (status) => {
+export const publishFund = (summary, applicationQuestions, callback) => {
+  appendEvent('fundPublished', { summary, applicationQuestions }, (status) => {
     callback(status === 201)
   })
 }

@@ -21,6 +21,20 @@ export const applicationQuestionsReducer = (
         newApplicationQuestions['orgType'] = {}
       }
       break
+    case 'formulateQ2':
+      if (choice === 'direct award') {
+        newApplicationQuestions['strategicFit'] = {
+          text: 'Have you read the strategic fit criteria?',
+          options: [
+            { value: 'yes', text: 'Yes' },
+            { value: 'No', text: 'No' },
+          ],
+        }
+      } else {
+        newApplicationQuestions['strategicFit'] = {}
+      }
+
+      break
   }
   return newApplicationQuestions
 }

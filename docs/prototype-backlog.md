@@ -39,7 +39,7 @@ Once completed the checkbox next to the item will be checked.
 
 - [x] Designer: If Summary is visible I also see an Example Application Form (with just the Org Type)
 
-- [ ] Designer: For Direct Award fund, we also see the "strategic fit" question (FIRST)
+- [x] Designer: For Direct Award fund, we also see the "strategic fit" question (FIRST)
 
 - [ ] Designer: If Intermediary, show 'validation hint' for Org Type Q; it is always "must be LA, MCA, LEP"
 

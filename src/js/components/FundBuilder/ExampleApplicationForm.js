@@ -1,6 +1,6 @@
 import React from 'react'
 
-const QUESTION_ORDER = ['orgType']
+const QUESTION_ORDER = ['strategicFit', 'orgType']
 
 export const ExampleApplicationForm = ({ applicationQuestions }) => {
   return (
@@ -12,7 +12,7 @@ export const ExampleApplicationForm = ({ applicationQuestions }) => {
             if (questionKey in applicationQuestions) {
               const question = applicationQuestions[questionKey]
               return (
-                <div key={idx}>
+                <div key={idx} className={'example-application-question'}>
                   <p>{question.text}</p>
                   {question.options &&
                     question.options.map((option, optIdx) => (
@@ -22,6 +22,7 @@ export const ExampleApplicationForm = ({ applicationQuestions }) => {
                           id={`${questionKey}opt${optIdx}`}
                           type={'radio'}
                           value={option.value}
+                          disabled
                         />
                         <label htmlFor={`${questionKey}opt${optIdx}`}>
                           {option.text}

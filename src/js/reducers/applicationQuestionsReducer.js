@@ -2,7 +2,7 @@ export const applicationQuestionsReducer = (
   applicationQuestions,
   { question, choice }
 ) => {
-  const newApplicationQuestions = { ...applicationQuestions }
+  let newApplicationQuestions = { ...applicationQuestions }
 
   const basicOrgTypeQuestion = {
     text: 'What is your organisation?',
@@ -21,7 +21,7 @@ export const applicationQuestionsReducer = (
       if (choice === 'yes') {
         newApplicationQuestions['orgType'] = basicOrgTypeQuestion
       } else {
-        newApplicationQuestions['orgType'] = {}
+        newApplicationQuestions = {}
       }
       break
     case 'formulateQ2':

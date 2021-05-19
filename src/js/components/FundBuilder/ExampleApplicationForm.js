@@ -29,6 +29,13 @@ export const ExampleApplicationForm = ({ applicationQuestions }) => {
                         </label>
                       </div>
                     ))}
+                  {question.validationHint ? (
+                    <span className={'validation-hint'}>
+                      Evaluation: {question.validationHint}
+                    </span>
+                  ) : (
+                    ''
+                  )}
                 </div>
               )
             }

@@ -41,7 +41,7 @@ Once completed the checkbox next to the item will be checked.
 
 - [x] Designer: For Direct Award fund, we also see the "strategic fit" question (FIRST)
 
-- [ ] Designer: If Intermediary, show 'validation hint' for Org Type Q; it is always "must be LA, MCA, LEP"
+- [x] Designer: If Intermediary, show 'validation hint' for Org Type Q; it is always "must be LA, MCA, LEP"
 
 - [ ] Designer: Q3 is "Capital Spend?"
 

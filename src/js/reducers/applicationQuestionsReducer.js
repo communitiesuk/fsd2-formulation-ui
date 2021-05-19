@@ -52,7 +52,11 @@ export const applicationQuestionsReducer = (
   }
 
   // strategicFit
-  if (setupResponses.deliveryMethod === 'direct award') {
+  if (
+    setupResponses.deliveryMethod === 'direct award' ||
+    (setupResponses.deliveryMethod === 'intermediary bodies' &&
+      setupResponses.ringfenced === 'ringfenced')
+  ) {
     applicationQuestions['strategicFit'] = basicStrategicFitQuestion
   }
 

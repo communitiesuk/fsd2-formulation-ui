@@ -53,9 +53,9 @@ Once completed the checkbox next to the item will be checked.
 
 - [x] Designer: For "intermediaries" there is also Q4 "Ringfenced?"  
 
-- [ ] Designer: For intermediaries + Ringfenced Yes, we see "Strategic Fit" question
+- [x] Designer: For intermediaries + Ringfenced Yes, we see "Strategic Fit" question
 
-- [ ] Designer: For intermediaries + Ringfenced No, we do not see "Strategic Fit" question
+- [x] Designer: For intermediaries + Ringfenced No, we do not see "Strategic Fit" question
 
 - [x] Designer: "Strategic Fit" Q always has validation hint of "Answer must be Yes"
 

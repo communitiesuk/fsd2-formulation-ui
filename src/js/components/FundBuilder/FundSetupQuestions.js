@@ -71,7 +71,7 @@ export const FundSetupQuestions = ({
               <>
                 <RadioQuestion
                   name={'ringfenced'}
-                  questionNumber={3}
+                  questionNumber={4}
                   guidance={'Guidance concerning what constitutes ringfenced.'}
                   questionText={'Will your fund be ringfenced or unringfenced?'}
                 >

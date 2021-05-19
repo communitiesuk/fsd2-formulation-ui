@@ -1,8 +1,10 @@
 export const applicationQuestionsReducer = (
-  applicationQuestions,
+  applicationQuestionsState,
   { question, choice }
 ) => {
-  let newApplicationQuestions = { ...applicationQuestions }
+  const newApplicationQuestionsState = { ...applicationQuestionsState }
+  let newApplicationQuestions =
+    newApplicationQuestionsState.applicationQuestions
 
   const basicOrgTypeQuestion = {
     text: 'What is your organisation?',
@@ -45,5 +47,5 @@ export const applicationQuestionsReducer = (
 
       break
   }
-  return newApplicationQuestions
+  return newApplicationQuestionsState
 }

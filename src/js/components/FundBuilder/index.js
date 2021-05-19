@@ -1,6 +1,6 @@
 import React, { useReducer, useState } from 'react'
 
-import { appendEvent } from '../../services'
+import { publishFund } from '../../services'
 import { FundSetupQuestions } from './FundSetupQuestions'
 import { FundSetupSummary } from './FundSetupSummary'
 
@@ -81,8 +81,8 @@ export const FundBuilder = () => {
   }
 
   const handlePublishClick = () => {
-    appendEvent('fundPublished', setupQuestions, (status) => {
-      if (status == '201') {
+    publishFund(setupSummary, (success) => {
+      if (success) {
         setPublishedMessage('Fund was published.')
       }
     })

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const appendEvent = (eventType, eventValue, callback) => {
+const appendEvent = (eventType, eventValue, callback) => {
   axios
     .post(`${EVENT_HUB_API_URL}/events/${eventType}`, {
       value: eventValue,
@@ -10,8 +10,8 @@ export const appendEvent = (eventType, eventValue, callback) => {
     })
 }
 
-export const getEvents = (eventType, callback) => {
-  axios.get(`${EVENT_HUB_API_URL}/events/${eventType}`).then((response) => {
-    callback(response.data)
+export const publishFund = (summary, callback) => {
+  appendEvent('fundPublished', { summary }, (status) => {
+    callback(status === 201)
   })
 }

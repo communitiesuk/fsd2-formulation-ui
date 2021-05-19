@@ -27,10 +27,10 @@ export const FundBuilder = () => {
     setupSummaryReducer,
     {}
   )
-  const [
-    applicationQuestionsState,
-    applicationQuestionsDispatch,
-  ] = useReducer(applicationQuestionsReducer, { applicationQuestions: {} })
+  const [applicationQuestionsState, applicationQuestionsDispatch] = useReducer(
+    applicationQuestionsReducer,
+    {}
+  )
 
   const [prohibitionMessage, setProhibitionMessage] = useState('')
   const [publishedMessage, setPublishedMessage] = useState('')

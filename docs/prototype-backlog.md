@@ -33,7 +33,9 @@ Once completed the checkbox next to the item will be checked.
 
 - [x] Designer: Clicking "Publish" publishes the Fund as an Event
 
-- [ ] Rework publication to send the event data with all the info the Application UI needs
+- [x] Rework setup questions to be event-driven / reducer-driven, so that we may....
+
+- [ ] ...rework publication to send the event data with all the info the Application UI needs
 
 - [ ] Designer: If Summary is visible I also see an Example Application Form (with just the Org Type)
 

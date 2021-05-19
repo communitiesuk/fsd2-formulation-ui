@@ -1,34 +1,18 @@
 import React from 'react'
 
-export const FundSetupSummary = ({ questions }) => {
-  const { formulateQ1, formulateQ2 } = questions
+const SUMMARY_STATEMENT_ORDER = ['fundType', 'deliveryMethod', 'applicantTypes']
 
+export const FundSetupSummary = ({ summary }) => {
   return (
     <>
-      {formulateQ1 == 'yes' ? (
+      {Object.keys(summary).length ? (
         <>
           <h2>Your Choices</h2>
-          <p>
-            This is a <b>competitive</b> fund.
-          </p>
-
-          {formulateQ2 ? (
-            <>
-              <p>
-                The fund will be delivered by <b>{formulateQ2}</b>.
-              </p>
-              {formulateQ2 == 'direct award' ? (
-                <p>
-                  Applicants can include: Local authorities, charities and
-                  businesses.
-                </p>
-              ) : (
-                ''
-              )}
-            </>
-          ) : (
-            ''
-          )}
+          {SUMMARY_STATEMENT_ORDER.map((statementKey, idx) => {
+            if (statementKey in summary) {
+              return <p key={idx}>{summary[statementKey]}</p>
+            }
+          })}
         </>
       ) : (
         ''

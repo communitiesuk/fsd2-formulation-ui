@@ -10,7 +10,13 @@ const Guidance = ({ guidance }) => (
   </>
 )
 
-export const RadioQuestion = ({ children, guidance, name, questionText }) => {
+export const RadioQuestion = ({
+  children,
+  guidance,
+  name,
+  questionNumber,
+  questionText,
+}) => {
   const [showGuidance, setShowGuidance] = useState(false)
 
   const handleGuidanceLinkClick = (e) => {
@@ -35,6 +41,7 @@ export const RadioQuestion = ({ children, guidance, name, questionText }) => {
           return React.cloneElement(child, {
             idx,
             name,
+            questionNumber,
           })
         }
       })}

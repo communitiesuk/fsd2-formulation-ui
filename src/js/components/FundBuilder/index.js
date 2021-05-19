@@ -4,6 +4,7 @@ import { publishFund } from '../../services'
 
 import {
   applicationQuestionsReducer,
+  furthestQReducer,
   setupQuestionsReducer,
   setupSummaryReducer,
 } from '../../reducers'
@@ -16,6 +17,8 @@ const PROHIBITION_MESSAGE_COMPETITIVE_ONLY =
   'Please do not go any further. This page is for setting up competitive funds only at the moment.'
 
 export const FundBuilder = () => {
+  const [furthestQ, furthestQDispatch] = useReducer(furthestQReducer, 0)
+
   const [setupQuestions, setupQuestionsDispatch] = useReducer(
     setupQuestionsReducer,
     {}
@@ -29,7 +32,6 @@ export const FundBuilder = () => {
     {}
   )
 
-  const [currentQ, setCurrentQ] = useState(1)
   const [prohibitionMessage, setProhibitionMessage] = useState('')
   const [publishedMessage, setPublishedMessage] = useState('')
 
@@ -42,30 +44,25 @@ export const FundBuilder = () => {
      * to implement so we are going to 'fake it' here by dispatching more than one event at
      * the publication stage.
      */
-    setupQuestionsDispatch({
+    const eventBody = {
+      questionNumber: e.target.getAttribute('questionnumber'),
       question: e.target.name,
       choice: e.target.value,
-    })
-    setupSummaryDispatch({
-      question: e.target.name,
-      choice: e.target.value,
-    })
-    applicationQuestionsDispatch({
-      question: e.target.name,
-      choice: e.target.value,
-    })
+    }
+    furthestQDispatch(eventBody)
+    setupQuestionsDispatch(eventBody)
+    setupSummaryDispatch(eventBody)
+    applicationQuestionsDispatch(eventBody)
 
     if (e.target.name == 'formulateQ1') {
       if (e.target.value == 'no') {
         setProhibitionMessage(PROHIBITION_MESSAGE_COMPETITIVE_ONLY)
-        setCurrentQ(1)
         setupQuestionsDispatch({
           question: 'formulateQ2',
           choice: null,
         })
       } else {
         setProhibitionMessage('')
-        setCurrentQ(2)
       }
     }
   }
@@ -83,8 +80,9 @@ export const FundBuilder = () => {
       <div className={'row'}>
         <div className={'col-md-6'}>
           <FundSetupQuestions
-            currentQ={currentQ}
+            furthestQ={furthestQ}
             handleFormChange={handleFormChange}
+            prohibitionMessage={prohibitionMessage}
           />
         </div>
         <div className={'col-md-6'}>
@@ -98,13 +96,6 @@ export const FundBuilder = () => {
           </div>
         </div>
       </div>
-      {prohibitionMessage ? (
-        <div className="alert alert-danger" role="alert">
-          {prohibitionMessage}
-        </div>
-      ) : (
-        ''
-      )}
       {setupQuestions.formulateQ1 && setupQuestions.formulateQ2 ? (
         <>
           <button

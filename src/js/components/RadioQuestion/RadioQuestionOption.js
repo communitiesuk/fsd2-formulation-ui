@@ -1,6 +1,12 @@
 import React from 'react'
 
-export const RadioQuestionOption = ({ children, idx, name, value }) => {
+export const RadioQuestionOption = ({
+  children,
+  idx,
+  name,
+  questionNumber,
+  value,
+}) => {
   const elementId = `${name}opt${idx}`
   return (
     <>
@@ -9,6 +15,7 @@ export const RadioQuestionOption = ({ children, idx, name, value }) => {
           className="form-check-input"
           type="radio"
           name={name}
+          questionnumber={questionNumber}
           id={elementId}
           value={value}
         />

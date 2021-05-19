@@ -1,13 +1,15 @@
 export const setupSummaryReducer = (summary, { question, choice }) => {
-  const newSummary = { ...summary }
+  let newSummary = { ...summary }
 
   switch (question) {
     case 'formulateQ1':
-      newSummary['fundType'] =
-        choice === 'yes' ? 'This is a competitive fund.' : ''
+      if (choice === 'yes') {
+        newSummary['fundType'] = 'This is a competitive fund.'
+      } else {
+        newSummary = {}
+      }
       break
     case 'formulateQ2':
-      // TODO Bug: delivery method remains after invalid competitive answer
       newSummary['deliveryMethod'] = `The fund will be delivered by ${choice}.`
       newSummary['applicantTypes'] =
         choice === 'direct award'

@@ -19,14 +19,14 @@ export const applicationQuestionsReducer = (
   }
 
   switch (question) {
-    case 'formulateQ1':
+    case 'isCompetitiveFund':
       if (choice === 'yes') {
         newApplicationQuestions['orgType'] = basicOrgTypeQuestion
       } else {
         newApplicationQuestions = {}
       }
       break
-    case 'formulateQ2':
+    case 'deliveryMethod':
       if (choice === 'direct award') {
         newApplicationQuestions['orgType'] = basicOrgTypeQuestion
         newApplicationQuestions['strategicFit'] = {

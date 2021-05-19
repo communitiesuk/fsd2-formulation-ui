@@ -54,11 +54,11 @@ export const FundBuilder = () => {
     setupSummaryDispatch(eventBody)
     applicationQuestionsDispatch(eventBody)
 
-    if (e.target.name == 'formulateQ1') {
+    if (e.target.name == 'isCompetitiveFund') {
       if (e.target.value == 'no') {
         setProhibitionMessage(PROHIBITION_MESSAGE_COMPETITIVE_ONLY)
         setupQuestionsDispatch({
-          question: 'formulateQ2',
+          question: 'deliveryMethod',
           choice: null,
         })
       } else {
@@ -98,7 +98,7 @@ export const FundBuilder = () => {
           </div>
         </div>
       </div>
-      {setupQuestions.formulateQ1 && setupQuestions.formulateQ2 ? (
+      {setupQuestions.isCompetitiveFund && setupQuestions.deliveryMethod ? (
         <>
           <button
             type="button"

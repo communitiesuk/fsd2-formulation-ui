@@ -12,7 +12,7 @@ export const FundSetupQuestions = ({
       <h2>Fund Setup - Initial Questions</h2>
       <form onChange={handleFormChange}>
         <RadioQuestion
-          name={'formulateQ1'} // TODO rename these names; they are not clear
+          name={'isCompetitiveFund'}
           questionNumber={1}
           guidance={
             'Here is some very good guidance on what constitutes a competitive fund.'
@@ -31,7 +31,7 @@ export const FundSetupQuestions = ({
             {furthestQ >= 1 ? (
               <>
                 <RadioQuestion
-                  name={'formulateQ2'}
+                  name={'deliveryMethod'}
                   questionNumber={2}
                   guidance={
                     'Guidance concerning the delivery methods for funds.'
@@ -52,7 +52,7 @@ export const FundSetupQuestions = ({
             {furthestQ >= 2 ? (
               <>
                 <RadioQuestion
-                  name={'formulateQ3'}
+                  name={'capitalSpend'}
                   questionNumber={2}
                   guidance={
                     'Guidance concerning what constitutes capital spend.'

@@ -1,64 +1,19 @@
 import React, { useReducer, useState } from 'react'
 
 import { publishFund } from '../../services'
+
+import {
+  applicationQuestionsReducer,
+  setupQuestionsReducer,
+  setupSummaryReducer,
+} from '../../reducers'
+
 import { ExampleApplicationForm } from './ExampleApplicationForm'
 import { FundSetupQuestions } from './FundSetupQuestions'
 import { FundSetupSummary } from './FundSetupSummary'
 
 const PROHIBITION_MESSAGE_COMPETITIVE_ONLY =
   'Please do not go any further. This page is for setting up competitive funds only at the moment.'
-
-const setupQuestionsReducer = (questions, { question, choice }) => {
-  const newQuestions = { ...questions }
-  newQuestions[question] = choice
-  return newQuestions
-}
-
-const setupSummaryReducer = (summary, { question, choice }) => {
-  const newSummary = { ...summary }
-
-  switch (question) {
-    case 'formulateQ1':
-      newSummary['fundType'] =
-        choice === 'yes' ? 'This is a competitive fund.' : ''
-      break
-    case 'formulateQ2':
-      newSummary['deliveryMethod'] = `The fund will be delivered by ${choice}.`
-      newSummary['applicantTypes'] =
-        choice === 'direct award'
-          ? 'Applicants can include: Local authorities, charities and businesses.'
-          : ''
-      break
-  }
-  return newSummary
-}
-
-const applicationQuestionsReducer = (
-  applicationQuestions,
-  { question, choice }
-) => {
-  const newApplicationQuestions = { ...applicationQuestions }
-
-  switch (question) {
-    case 'formulateQ1':
-      if (choice === 'yes') {
-        newApplicationQuestions['orgType'] = {
-          text: 'What is your organisation?',
-          options: [
-            { value: 'ltdcomp', text: 'Limited Company' },
-            { value: 'charity', text: 'Charity' },
-            { value: 'la', text: 'Local Authority' },
-            { value: 'mca', text: 'Mayoral Combined Authority' },
-            { value: 'lep', text: 'Local Enterprise Partnership' },
-          ],
-        }
-      } else {
-        newApplicationQuestions['orgType'] = {}
-      }
-      break
-  }
-  return newApplicationQuestions
-}
 
 export const FundBuilder = () => {
   const [setupQuestions, setupQuestionsDispatch] = useReducer(

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const SUMMARY_STATEMENT_ORDER = [
-  'fundType',
+  'isCompetitiveFund',
   'deliveryMethod',
   'applicantTypes',
   'capitalSpend',

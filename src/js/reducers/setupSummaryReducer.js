@@ -4,7 +4,7 @@ export const setupSummaryReducer = (summary, { question, choice }) => {
   switch (question) {
     case 'formulateQ1':
       if (choice === 'yes') {
-        newSummary['fundType'] = 'This is a competitive fund.'
+        newSummary['isCompetitiveFund'] = 'This is a competitive fund.'
       } else {
         newSummary = {}
       }

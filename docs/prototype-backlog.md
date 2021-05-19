@@ -47,7 +47,7 @@ Once completed the checkbox next to the item will be checked.
 
 - [x] Designer: Q3 is "Capital Spend?"
 
-- [ ] Designer: If Direct Award + Capital Spend Yes then Org Type validation hint is "must not be LA, MCA, or LEP"; if "no" then "MUST BE LA, MCA, LEP"
+- [x] Designer: If Direct Award + Capital Spend Yes then Org Type validation hint is "must not be LA, MCA, or LEP"; if "no" then "MUST BE LA, MCA, LEP"
 
 - [ ] Designer: For "intermediaries" there is also Q4 "Ringfenced?"  
 

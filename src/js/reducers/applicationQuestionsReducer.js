@@ -36,6 +36,16 @@ export const applicationQuestionsReducer = (
   applicationQuestions['orgType'] = basicOrgTypeQuestion
   if (setupQuestions.deliveryMethod === 'intermediary bodies') {
     applicationQuestions['orgType']['validationHint'] = 'Must be LA, MCA or LEP'
+  } else if (setupQuestions.deliveryMethod === 'direct award') {
+    if (setupQuestions.capitalSpend === 'yes') {
+      applicationQuestions['orgType']['validationHint'] =
+        'Must NOT be LA, MCA or LEP'
+    } else if (setupQuestions.capitalSpend === 'no') {
+      applicationQuestions['orgType']['validationHint'] =
+        'Must be LA, MCA or LEP'
+    } else {
+      applicationQuestions['orgType']['validationHint'] = null
+    }
   } else {
     applicationQuestions['orgType']['validationHint'] = null
   }

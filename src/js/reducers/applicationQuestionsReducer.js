@@ -30,18 +30,18 @@ export const applicationQuestionsReducer = (
   const applicationQuestions = {}
 
   // This state tree also needs to track the setup Qs, so maintains its own state copy
-  const setupQuestions = applicationQuestionsState.setupQuestions || {}
-  setupQuestions[question] = choice
+  const setupResponses = applicationQuestionsState.setupResponses || {}
+  setupResponses[question] = choice
 
   // orgType
   applicationQuestions['orgType'] = basicOrgTypeQuestion
-  if (setupQuestions.deliveryMethod === 'intermediary bodies') {
+  if (setupResponses.deliveryMethod === 'intermediary bodies') {
     applicationQuestions['orgType']['validationHint'] = 'Must be LA, MCA or LEP'
-  } else if (setupQuestions.deliveryMethod === 'direct award') {
-    if (setupQuestions.capitalSpend === 'yes') {
+  } else if (setupResponses.deliveryMethod === 'direct award') {
+    if (setupResponses.capitalSpend === 'yes') {
       applicationQuestions['orgType']['validationHint'] =
         'Must NOT be LA, MCA or LEP'
-    } else if (setupQuestions.capitalSpend === 'no') {
+    } else if (setupResponses.capitalSpend === 'no') {
       applicationQuestions['orgType']['validationHint'] =
         'Must be LA, MCA or LEP'
     } else {
@@ -52,12 +52,12 @@ export const applicationQuestionsReducer = (
   }
 
   // strategicFit
-  if (setupQuestions.deliveryMethod === 'direct award') {
+  if (setupResponses.deliveryMethod === 'direct award') {
     applicationQuestions['strategicFit'] = basicStrategicFitQuestion
   }
 
   return {
     applicationQuestions: applicationQuestions,
-    setupQuestions: setupQuestions,
+    setupResponses: setupResponses,
   }
 }

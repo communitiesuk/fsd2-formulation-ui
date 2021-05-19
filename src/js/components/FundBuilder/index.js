@@ -5,7 +5,7 @@ import { publishFund } from '../../services'
 import {
   applicationQuestionsReducer,
   furthestQReducer,
-  setupQuestionsReducer,
+  setupResponsesReducer,
   setupSummaryReducer,
 } from '../../reducers'
 
@@ -19,8 +19,8 @@ const PROHIBITION_MESSAGE_COMPETITIVE_ONLY =
 export const FundBuilder = () => {
   const [furthestQ, furthestQDispatch] = useReducer(furthestQReducer, 0)
 
-  const [setupQuestions, setupQuestionsDispatch] = useReducer(
-    setupQuestionsReducer,
+  const [setupResponses, setupResponsesDispatch] = useReducer(
+    setupResponsesReducer,
     {}
   )
   const [setupSummary, setupSummaryDispatch] = useReducer(
@@ -50,14 +50,14 @@ export const FundBuilder = () => {
       choice: e.target.value,
     }
     furthestQDispatch(eventBody)
-    setupQuestionsDispatch(eventBody)
+    setupResponsesDispatch(eventBody)
     setupSummaryDispatch(eventBody)
     applicationQuestionsDispatch(eventBody)
 
     if (e.target.name == 'isCompetitiveFund') {
       if (e.target.value == 'no') {
         setProhibitionMessage(PROHIBITION_MESSAGE_COMPETITIVE_ONLY)
-        setupQuestionsDispatch({
+        setupResponsesDispatch({
           question: 'deliveryMethod',
           choice: null,
         })
@@ -98,7 +98,7 @@ export const FundBuilder = () => {
           </div>
         </div>
       </div>
-      {setupQuestions.isCompetitiveFund && setupQuestions.deliveryMethod ? (
+      {setupResponses.isCompetitiveFund && setupResponses.deliveryMethod ? (
         <>
           <button
             type="button"

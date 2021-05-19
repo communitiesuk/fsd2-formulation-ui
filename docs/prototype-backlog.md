@@ -49,10 +49,14 @@ Once completed the checkbox next to the item will be checked.
 
 - [x] Designer: If Direct Award + Capital Spend Yes then Org Type validation hint is "must not be LA, MCA, or LEP"; if "no" then "MUST BE LA, MCA, LEP"
 
-- [ ] Designer: For "intermediaries" there is also Q4 "Ringfenced?"  
+- [ ] Rework the display of setup questions to be reducer based and JSON defined - dispense with the special form element types RadioQuestion etc
+
+- [x] Designer: For "intermediaries" there is also Q4 "Ringfenced?"  
 
 - [ ] Designer: For intermediaries + Ringfenced Yes, we see "Strategic Fit" question
 
 - [ ] Designer: For intermediaries + Ringfenced No, we do not see "Strategic Fit" question
 
 - [x] Designer: "Strategic Fit" Q always has validation hint of "Answer must be Yes"
+
+- [ ] (STRETCH) Designer: Capital Spend question is shown with validation hint blank UNLESS fund setup 'capital spend' is 'yes' in which case "Must be NO"

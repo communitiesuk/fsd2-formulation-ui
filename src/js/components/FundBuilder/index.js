@@ -83,6 +83,9 @@ export const FundBuilder = () => {
             furthestQ={furthestQ}
             handleFormChange={handleFormChange}
             prohibitionMessage={prohibitionMessage}
+            showRingfencedQuestion={
+              setupResponses.deliveryMethod === 'intermediary bodies'
+            }
           />
         </div>
         <div className={'col-md-6'}>

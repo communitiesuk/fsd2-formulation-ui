@@ -5,6 +5,7 @@ const SUMMARY_STATEMENT_ORDER = [
   'deliveryMethod',
   'applicantTypes',
   'capitalSpend',
+  'ringfenced',
 ]
 
 export const FundSetupSummary = ({ summary }) => {

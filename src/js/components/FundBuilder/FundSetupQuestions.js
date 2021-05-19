@@ -6,6 +6,7 @@ export const FundSetupQuestions = ({
   furthestQ,
   handleFormChange,
   prohibitionMessage,
+  showRingfencedQuestion,
 }) => {
   return (
     <>
@@ -53,7 +54,7 @@ export const FundSetupQuestions = ({
               <>
                 <RadioQuestion
                   name={'capitalSpend'}
-                  questionNumber={2}
+                  questionNumber={3}
                   guidance={
                     'Guidance concerning what constitutes capital spend.'
                   }
@@ -61,6 +62,25 @@ export const FundSetupQuestions = ({
                 >
                   <RadioQuestionOption value={'yes'}>Yes</RadioQuestionOption>
                   <RadioQuestionOption value={'no'}>No</RadioQuestionOption>
+                </RadioQuestion>
+              </>
+            ) : (
+              ''
+            )}
+            {furthestQ >= 3 && showRingfencedQuestion ? (
+              <>
+                <RadioQuestion
+                  name={'ringfenced'}
+                  questionNumber={3}
+                  guidance={'Guidance concerning what constitutes ringfenced.'}
+                  questionText={'Will your fund be ringfenced or unringfenced?'}
+                >
+                  <RadioQuestionOption value={'ringfenced'}>
+                    Ringfenced
+                  </RadioQuestionOption>
+                  <RadioQuestionOption value={'unringfenced'}>
+                    Unringfenced
+                  </RadioQuestionOption>
                 </RadioQuestion>
               </>
             ) : (

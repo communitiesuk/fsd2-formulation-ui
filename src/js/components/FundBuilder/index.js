@@ -45,7 +45,7 @@ export const FundBuilder = () => {
      * the publication stage.
      */
     const eventBody = {
-      questionNumber: e.target.getAttribute('questionnumber'),
+      questionNumber: parseInt(e.target.getAttribute('questionnumber')),
       question: e.target.name,
       choice: e.target.value,
     }
@@ -75,6 +75,9 @@ export const FundBuilder = () => {
     })
   }
 
+  const showRingfencedQuestion =
+    setupResponses.deliveryMethod === 'intermediary bodies'
+  const lastQuestionNumber = showRingfencedQuestion ? 4 : 3
   return (
     <>
       <div className={'row'}>
@@ -83,9 +86,7 @@ export const FundBuilder = () => {
             furthestQ={furthestQ}
             handleFormChange={handleFormChange}
             prohibitionMessage={prohibitionMessage}
-            showRingfencedQuestion={
-              setupResponses.deliveryMethod === 'intermediary bodies'
-            }
+            showRingfencedQuestion={showRingfencedQuestion}
           />
         </div>
         <div className={'col-md-6'}>
@@ -101,7 +102,7 @@ export const FundBuilder = () => {
           </div>
         </div>
       </div>
-      {setupResponses.isCompetitiveFund && setupResponses.deliveryMethod ? (
+      {furthestQ === lastQuestionNumber ? (
         <>
           <button
             type="button"

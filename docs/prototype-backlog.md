@@ -37,7 +37,7 @@ Once completed the checkbox next to the item will be checked.
 
 - [x] ...rework publication to send the event data with all the info the Application UI needs
 
-- [ ] Designer: If Summary is visible I also see an Example Application Form (with just the Org Type)
+- [x] Designer: If Summary is visible I also see an Example Application Form (with just the Org Type)
 
 - [ ] Designer: For Direct Award fund, we also see the "strategic fit" question (FIRST)
 

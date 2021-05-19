@@ -1,6 +1,7 @@
 import React, { useReducer, useState } from 'react'
 
 import { publishFund } from '../../services'
+import { ExampleApplicationForm } from './ExampleApplicationForm'
 import { FundSetupQuestions } from './FundSetupQuestions'
 import { FundSetupSummary } from './FundSetupSummary'
 
@@ -32,7 +33,32 @@ const setupSummaryReducer = (summary, { question, choice }) => {
   return newSummary
 }
 
-// const applicationFormReducer = null
+const applicationQuestionsReducer = (
+  applicationQuestions,
+  { question, choice }
+) => {
+  const newApplicationQuestions = { ...applicationQuestions }
+
+  switch (question) {
+    case 'formulateQ1':
+      if (choice === 'yes') {
+        newApplicationQuestions['orgType'] = {
+          text: 'What is your organisation?',
+          options: [
+            { value: 'ltdcomp', text: 'Limited Company' },
+            { value: 'charity', text: 'Charity' },
+            { value: 'la', text: 'Local Authority' },
+            { value: 'mca', text: 'Mayoral Combined Authority' },
+            { value: 'lep', text: 'Local Enterprise Partnership' },
+          ],
+        }
+      } else {
+        newApplicationQuestions['orgType'] = {}
+      }
+      break
+  }
+  return newApplicationQuestions
+}
 
 export const FundBuilder = () => {
   const [setupQuestions, setupQuestionsDispatch] = useReducer(
@@ -43,6 +69,11 @@ export const FundBuilder = () => {
     setupSummaryReducer,
     {}
   )
+  const [applicationQuestions, applicationQuestionsDispatch] = useReducer(
+    applicationQuestionsReducer,
+    {}
+  )
+
   const [currentQ, setCurrentQ] = useState(1)
   const [prohibitionMessage, setProhibitionMessage] = useState('')
   const [publishedMessage, setPublishedMessage] = useState('')
@@ -61,6 +92,10 @@ export const FundBuilder = () => {
       choice: e.target.value,
     })
     setupSummaryDispatch({
+      question: e.target.name,
+      choice: e.target.value,
+    })
+    applicationQuestionsDispatch({
       question: e.target.name,
       choice: e.target.value,
     })
@@ -98,7 +133,14 @@ export const FundBuilder = () => {
           />
         </div>
         <div className={'col-md-6'}>
-          <FundSetupSummary summary={setupSummary} />
+          <div>
+            <FundSetupSummary summary={setupSummary} />
+          </div>
+          <div>
+            <ExampleApplicationForm
+              applicationQuestions={applicationQuestions}
+            />
+          </div>
         </div>
       </div>
       {prohibitionMessage ? (

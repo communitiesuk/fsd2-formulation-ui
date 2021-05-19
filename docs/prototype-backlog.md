@@ -45,7 +45,7 @@ Once completed the checkbox next to the item will be checked.
 
 - [x] Rework show / hide logic for Qs and prohibition message, to make more extensible
 
-- [ ] Designer: Q3 is "Capital Spend?"
+- [x] Designer: Q3 is "Capital Spend?"
 
 - [ ] Designer: If Direct Award + Capital Spend Yes then Org Type validation hint is "must not be LA, MCA, or LEP"; if "no" then "MUST BE LA, MCA, LEP"
 

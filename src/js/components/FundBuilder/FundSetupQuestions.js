@@ -26,24 +26,47 @@ export const FundSetupQuestions = ({
           <div className="alert alert-danger" role="alert">
             {prohibitionMessage}
           </div>
-        ) : furthestQ >= 1 ? (
-          <>
-            <RadioQuestion
-              name={'formulateQ2'}
-              questionNumber={2}
-              guidance={'Guidance concerning the delivery methods for funds.'}
-              questionText={'How will your fund be delivered?'}
-            >
-              <RadioQuestionOption value={'intermediary bodies'}>
-                Intermediary Bodies
-              </RadioQuestionOption>
-              <RadioQuestionOption value={'direct award'}>
-                Direct award
-              </RadioQuestionOption>
-            </RadioQuestion>
-          </>
         ) : (
-          ''
+          <>
+            {furthestQ >= 1 ? (
+              <>
+                <RadioQuestion
+                  name={'formulateQ2'}
+                  questionNumber={2}
+                  guidance={
+                    'Guidance concerning the delivery methods for funds.'
+                  }
+                  questionText={'How will your fund be delivered?'}
+                >
+                  <RadioQuestionOption value={'intermediary bodies'}>
+                    Intermediary Bodies
+                  </RadioQuestionOption>
+                  <RadioQuestionOption value={'direct award'}>
+                    Direct award
+                  </RadioQuestionOption>
+                </RadioQuestion>
+              </>
+            ) : (
+              ''
+            )}
+            {furthestQ >= 2 ? (
+              <>
+                <RadioQuestion
+                  name={'formulateQ3'}
+                  questionNumber={2}
+                  guidance={
+                    'Guidance concerning what constitutes capital spend.'
+                  }
+                  questionText={'Does your fund involve capital spend?'}
+                >
+                  <RadioQuestionOption value={'yes'}>Yes</RadioQuestionOption>
+                  <RadioQuestionOption value={'no'}>No</RadioQuestionOption>
+                </RadioQuestion>
+              </>
+            ) : (
+              ''
+            )}
+          </>
         )}
       </form>
     </>

@@ -16,6 +16,12 @@ export const setupSummaryReducer = (summary, { question, choice }) => {
           ? 'Applicants can include: Local authorities, charities and businesses.'
           : ''
       break
+    case 'formulateQ3':
+      newSummary['capitalSpend'] =
+        choice === 'yes'
+          ? 'The fund involves capital spend'
+          : 'The fund does not involve capital spend'
+      break
   }
   return newSummary
 }

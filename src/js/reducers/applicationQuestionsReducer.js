@@ -15,6 +15,7 @@ const basicStrategicFitQuestion = {
     { value: 'yes', text: 'Yes' },
     { value: 'No', text: 'No' },
   ],
+  validationHint: 'Answer must be YES',
 }
 
 export const applicationQuestionsReducer = (

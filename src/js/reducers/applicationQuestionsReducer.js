@@ -33,6 +33,15 @@ export const applicationQuestionsReducer = (
   const setupResponses = applicationQuestionsState.setupResponses || {}
   setupResponses[question] = choice
 
+  // strategicFit
+  if (
+    setupResponses.deliveryMethod === 'direct award' ||
+    (setupResponses.deliveryMethod === 'intermediary bodies' &&
+      setupResponses.ringfenced === 'ringfenced')
+  ) {
+    applicationQuestions['strategicFit'] = basicStrategicFitQuestion
+  }
+
   // orgType
   applicationQuestions['orgType'] = basicOrgTypeQuestion
   if (setupResponses.deliveryMethod === 'intermediary bodies') {
@@ -49,15 +58,6 @@ export const applicationQuestionsReducer = (
     }
   } else {
     applicationQuestions['orgType']['validationHint'] = null
-  }
-
-  // strategicFit
-  if (
-    setupResponses.deliveryMethod === 'direct award' ||
-    (setupResponses.deliveryMethod === 'intermediary bodies' &&
-      setupResponses.ringfenced === 'ringfenced')
-  ) {
-    applicationQuestions['strategicFit'] = basicStrategicFitQuestion
   }
 
   return {

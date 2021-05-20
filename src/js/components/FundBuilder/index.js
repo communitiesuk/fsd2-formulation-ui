@@ -92,7 +92,7 @@ export const FundBuilder = () => {
             prohibitionMessage={prohibitionMessage}
             showRingfencedQuestion={showRingfencedQuestion}
           />
-          {furthestQ === lastQuestionNumber ? (
+          {furthestQ >= lastQuestionNumber ? (
             <>
               <button
                 type="button"

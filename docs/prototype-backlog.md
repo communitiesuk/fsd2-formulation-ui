@@ -49,7 +49,7 @@ Once completed the checkbox next to the item will be checked.
 
 - [x] Designer: If Direct Award + Capital Spend Yes then Org Type validation hint is "must not be LA, MCA, or LEP"; if "no" then "MUST BE LA, MCA, LEP"
 
-- [ ] Rework the display of setup questions to be reducer based and JSON defined - dispense with the special form element types RadioQuestion etc
+- [x] Rework the display of setup questions to be reducer based and JSON defined - dispense with the special form element types RadioQuestion etc
 
 - [x] Designer: For "intermediaries" there is also Q4 "Ringfenced?"  
 
@@ -64,3 +64,5 @@ Once completed the checkbox next to the item will be checked.
 - [x] Add the Application Questions to the payload of the event
 
 - [x] (STRETCH) Designer: Capital Spend question is shown with validation hint blank UNLESS fund setup 'capital spend' is 'yes' in which case "Must be NO"
+
+- [ ] Fix bug where Ringfenced Q does not disappear when deliveryMethod is changed

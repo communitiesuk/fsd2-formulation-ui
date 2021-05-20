@@ -65,4 +65,4 @@ Once completed the checkbox next to the item will be checked.
 
 - [x] (STRETCH) Designer: Capital Spend question is shown with validation hint blank UNLESS fund setup 'capital spend' is 'yes' in which case "Must be NO"
 
-- [ ] Fix bug where Ringfenced Q does not disappear when deliveryMethod is changed
+- [x] Fix bug where Ringfenced Q does not disappear when deliveryMethod is changed

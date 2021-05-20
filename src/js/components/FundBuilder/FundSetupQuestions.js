@@ -56,6 +56,7 @@ export const FundSetupQuestions = ({
 }) => {
   return (
     <>
+      showRingfencedQuestion {showRingfencedQuestion ? 'true' : 'false'}
       <h2>Fund Setup - Initial Questions</h2>
       <form onChange={handleFormChange}>
         {setupQuestions.map(
@@ -72,8 +73,8 @@ export const FundSetupQuestions = ({
             if (
               name === 'isCompetitiveFund' || // always show this
               (!prohibitionMessage &&
-                (furthestQ >= questionNumber - 1 ||
-                  (name === 'ringfenced' && showRingfencedQuestion)))
+                furthestQ >= questionNumber - 1 &&
+                (name !== 'ringfenced' || showRingfencedQuestion))
             ) {
               return (
                 <div key={idx}>

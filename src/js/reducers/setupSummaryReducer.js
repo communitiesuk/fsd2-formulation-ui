@@ -21,10 +21,10 @@ export const setupSummaryReducer = (summary, { question, choice }) => {
       newSummary['capitalSpend'] =
         choice === 'yes'
           ? 'The fund involves capital spend'
-          : 'The fund does not involve capital spend'
+          : 'The fund does not involve capital spend.'
       break
     case 'ringfenced':
-      newSummary['ringfenced'] = `The fund will be ${choice}`
+      newSummary['ringfenced'] = `The fund will be ${choice}.`
       break
   }
   return newSummary

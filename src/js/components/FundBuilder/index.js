@@ -92,6 +92,20 @@ export const FundBuilder = () => {
             prohibitionMessage={prohibitionMessage}
             showRingfencedQuestion={showRingfencedQuestion}
           />
+          {furthestQ === lastQuestionNumber ? (
+            <>
+              <button
+                type="button"
+                className="btn btn-success"
+                onClick={handlePublishClick}
+              >
+                Publish Fund
+              </button>
+              {publishedMessage}
+            </>
+          ) : (
+            ''
+          )}
         </div>
         <div className={'col-md-6'}>
           <div>
@@ -106,20 +120,6 @@ export const FundBuilder = () => {
           </div>
         </div>
       </div>
-      {furthestQ === lastQuestionNumber ? (
-        <>
-          <button
-            type="button"
-            className="btn btn-success"
-            onClick={handlePublishClick}
-          >
-            Publish Fund
-          </button>
-          {publishedMessage}
-        </>
-      ) : (
-        ''
-      )}
     </>
   )
 }

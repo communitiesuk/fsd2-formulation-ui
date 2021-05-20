@@ -18,6 +18,14 @@ const basicStrategicFitQuestion = {
   validationHint: 'Answer must be YES',
 }
 
+const basicCapitalSpendQuestion = {
+  text: 'Do any of your projects involve capital spend?',
+  options: [
+    { value: 'yes', text: 'Yes' },
+    { value: 'No', text: 'No' },
+  ],
+}
+
 export const applicationQuestionsReducer = (
   applicationQuestionsState,
   { question, choice }
@@ -58,6 +66,12 @@ export const applicationQuestionsReducer = (
     }
   } else {
     applicationQuestions['orgType']['validationHint'] = null
+  }
+
+  // capitalSpend
+  applicationQuestions['capitalSpend'] = basicCapitalSpendQuestion
+  if (setupResponses.capitalSpend === 'no') {
+    applicationQuestions['capitalSpend'].validationHint = 'Must be NO'
   }
 
   return {

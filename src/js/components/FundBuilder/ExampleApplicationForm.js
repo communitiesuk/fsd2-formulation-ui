@@ -1,6 +1,6 @@
 import React from 'react'
 
-const QUESTION_ORDER = ['strategicFit', 'orgType']
+const QUESTION_ORDER = ['strategicFit', 'orgType', 'capitalSpend']
 
 export const ExampleApplicationForm = ({ applicationQuestions }) => {
   return (

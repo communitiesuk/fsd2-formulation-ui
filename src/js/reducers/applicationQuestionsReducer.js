@@ -40,6 +40,10 @@ export const applicationQuestionsReducer = (
   // This state tree also needs to track the setup Qs, so maintains its own state copy
   const setupResponses = applicationQuestionsState.setupResponses || {}
   setupResponses[question] = choice
+  // Ringfenced depends on delivery method; reset it if the latter changes
+  if (question === 'deliveryMethod') {
+    setupResponses['ringfenced'] = 'null'
+  }
 
   // strategicFit
   if (

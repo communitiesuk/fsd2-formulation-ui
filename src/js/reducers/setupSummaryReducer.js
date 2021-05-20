@@ -15,6 +15,7 @@ export const setupSummaryReducer = (summary, { question, choice }) => {
         choice === 'direct award'
           ? 'Applicants can include: Local authorities, charities and businesses.'
           : ''
+      newSummary['ringfenced'] = null
       break
     case 'capitalSpend':
       newSummary['capitalSpend'] =
